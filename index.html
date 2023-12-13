@@ -3,7 +3,16 @@
 <html>
 <head>
     <title>Sneha Maheshwari's Portfolio</title>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            height: 35px;
+        }
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -12,112 +21,847 @@
             color: #333;
         }
         .container {
-            width: 80%;
+            width: 95%;
             margin: auto;
             overflow: hidden;
         }
         header {
-            background: #50b3a2;
-            color: white;
-            padding-top: 30px;
-            min-height: 70px;
-            border-bottom: #e8491d 3px solid;
+            background: #ffffff;
+            color: #6d6b6b;
+            padding-top: 3px;
+            min-height: 3px;
+            border-bottom: #ffffff 3px solid;
+
+        }
+        h2 {
+            color: #6d6b6b; /* Change the color of h2 headings */
+            text-align: center; 
+            margin-bottom: 30px;
         }
         header a {
-            color: #ffffff;
+            color: #6d6b6b;
             text-decoration: none;
             text-transform: uppercase;
-            font-size: 16px;
+            font-size: 10px;
+
         }
         header ul {
             padding: 0;
             list-style: none;
             text-align: center;
+            vertical-align: middle;
         }
         header li {
             display: inline;
-            margin: 0 20px 0 20px;
+            margin: 0 15px 0 15px;
+            vertical-align: middle;
         }
         header #branding {
             float: left;
+            vertical-align: middle;
         }
         header #branding h1 {
             margin: 0;
+            vertical-align: middle;
         }
         header nav {
             float: right;
-            margin-top: 10px;
-        }
-        header .highlight, header .current a {
-            color: #e8491d;
-            font-weight: bold;
+            margin-top: -0.5em;
+            vertical-align: middle;
         }
         header a:hover {
-            color: #ffffff;
+            color: #6d6b6b;
             font-weight: bold;
         }
         .showcase {
-            min-height: 400px;
-            background: url('banner.jpg') no-repeat 0 -400px;
-            text-align: center;
-            color: #ffffff;
+            /* background: url('background.jpg') no-repeat center center/cover; */
+            /* min-height: 400px; */
+            /* background: url('banner.jpg') no-repeat 0 -400px; */
+            background: none;
+            text-align: left;
+            padding: 20px 0;
+            margin-top: 50px;
+            /* color: #ffffff; */
         }
+        .showcase-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .profile-pic {
+            flex-basis: 10%;
+            text-align: center;
+        }
+
+        .profile-pic img {
+            max-width: 200px; /* Adjust as per your preference */
+            border-radius: 5%;
+        }
+
+        .about-me {
+            flex-basis: 65%;
+            /* font-size: 1px; */
+        }
+        .about-me p {
+    font-size: 1px; /* Adjust this value as needed */
+}
         .showcase h1 {
-            margin-top: 100px;
-            font-size: 55px;
+            margin-top: 80px;
+            font-size: 58px;
             margin-bottom: 10px;
         }
         .showcase p {
             font-size: 20px;
         }
+    
+        section {
+            opacity: 0;
+            padding-top: 50px; /* Adjust as needed, should be at least the height of the fixed header */
+            margin-top: -50px;
+            transform: translateY(10px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        section.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .company-logo {
+            width: 50px; /* Adjust the width as needed */
+            height: auto; /* Maintain aspect ratio */
+            margin-right: 10px; /* Space between logo and text */
+            vertical-align: middle; /* Align with text */
+        }
+        .date-text {
+            /* Styling for the date text */
+            font-size: 0.8em; /* Adjust size as needed */
+            color: #666; /* Adjust color as needed */
+        }
+        .project-card {
+    background: #fff;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.project-card h3 {
+    margin: 0 0 10px 0;
+}
+
+.project-card p {
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.project-card ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.project-card ul li {
+    margin-bottom: 5px;
+}
+
+.project-card a {
+    color: #0e013c;
+    text-decoration: none;
+}
+
+.project-card a:hover {
+    text-decoration: underline;
+}
+
+.project-links a {
+    background-color: #6d6b6b; /* Grey background for buttons */
+    color: white;
+    padding: 5px 8px;
+    border-radius: 5px; /* Rounded corners for buttons */
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    margin: 5px 10px;
+}
+
+.project-links a:hover {
+    background-color: #0e013c; /* Darker shade on hover */
+}
+
+.project-links {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+
+
+.project-links img {
+    width: 24px; /* Adjust as needed */
+    height: auto;
+}
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* margin-bottom: 200px; */
+}
+
+.project-card h3 {
+    margin: 0;
+    justify-content: space-between;
+}
+
+.project-date {
+    font-size: 0.8em;
+    color: #666;
+    margin-top: 10px;
+}
+.project-card {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for hover effects */
+    /* display: flex;
+    flex-direction: column;  */
+    /* Stack elements vertically */
+}
+
+.project-card:hover {
+    transform: translateY(-5px); /* Slight lift when hovered */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+        .experience-card h3, .project-card h3 {
+            /* margin: 0 0 10px 0; */
+            color: #0e013c; /* Dark color for titles */
+            margin-bottom: 15px; /* More space after the title */
+        }
+
+        .project-card p, .project-card ul {
+            color: #333; /* Dark grey for text */
+            line-height: 1.6; /* Improved line spacing for readability */
+        }
+
+        .experience-card ul li, .project-card ul li {
+            margin-bottom: 5px;
+        }
+
+        .experience-card a, .project-card a {
+            color: #0e013c;
+            text-decoration: none;
+        }
+
+        .experience-card a:hover, .project-card a:hover {
+            text-decoration: underline;
+        }
+        .course-card {
+    background-color: #f1f1f1;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+
+.collapsible {
+    background-color: #777;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 18px;
+}
+
+.active, .collapsible:hover {
+    background-color: #555;
+}
+
+.content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+}
+#achievements ul {
+    list-style-type: none; /* Removes the default list styling */
+    padding: 0;
+}
+
+#achievements li {
+    margin-bottom: 10px; /* Adds spacing between each item */
+    font-size: 1em; /* Adjust font size as needed */
+}
+#responsibility ul {
+    list-style-type: none; /* Removes the default list styling */
+    padding: 0;
+}
+
+#responsibility li {
+    margin-bottom: 10px; /* Adds spacing between each item */
+    font-size: 1em; /* Adjust font size as needed */
+}
+#technical-skills ul {
+    list-style-type: none; /* Removes the default list styling */
+    padding: 0;
+}
+
+#technical-skills li {
+    margin-bottom: 10px; /* Adds spacing between each item */
+    font-size: 1em; /* Adjust font size as needed */
+}
+.timeline {
+    position: relative;
+    padding-left: 50px;
+    list-style: none;
+}
+
+.timeline:before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    width: 2px;
+    height: 100%;
+    background: #6d6b6b;
+}
+
+.timeline-item {
+    position: relative;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.timeline-icon {
+    position: absolute;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #6d6b6b;
+    top: 0;
+}
+
+.timeline-content {
+    padding-left: 45px;
+}
+
+.date {
+    font-size: 0.8em;
+    color: #666;
+}
+@media screen and (max-width: 768px) {
+    .project-card {
+        padding: 15px;
+    }
+}
+.video-container {
+    position: relative;
+    padding-bottom: 30.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%); 
+    width: 70%;
+    height: 100%;
+    /* align-items: center; */
+}
+
+#education .education-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+#education .education-item {
+    flex-basis: 45%;
+    margin: 10px;
+}
+
+#education .education-container .education-item .collapsible {
+    background-color: #fff;
+    color: #0e013c;
+    cursor: pointer;
+    /* padding: 18px; */
+    width: 100%;
+    /* border: 2px solid #666; */
+    text-align: left;
+    outline: none;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+#education .education-container .education-item .collapsible:hover, 
+#education .education-container .education-item .collapsible.active {
+    background-color: #f4f4f4;
+    /* border-color: #0e013c; */
+}
+
+#education .education-container .education-item .collapsible img {
+    margin-right: 15px;
+}
+
+#education .education-container .education-item .content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+
+/* Additional styling for content and icons as needed */
+
+
+
+
     </style>
 </head>
 <body>
     <header>
         <div class="container">
             <div id="branding">
-                <h1><span class="highlight">Sneha</span> Maheshwari</h1>
+                <!-- <img src="profile_pic.jpg" alt="Sneha Maheshwari" style="width: 50px; height: 50px; border-radius: 50%; float: left; margin-right: 10px;"> -->
+                <h1 style="font-size: 35px; margin-top: 0px; ">Sneha Maheshwari</h1>
             </div>
             <nav>
                 <ul>
-                    <li class="current"><a href="#home">Home</a></li>
+                    <li ><a href="#home">Home</a></li>
                     <li><a href="#education">Education</a></li>
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#projects">Projects</a></li>
+                    <li><a href="#publications">Publications</a></li>
+                    <li><a href="#technical-skills">Technical Skills</a></li>
+                    <li><a href="#key-courses">Courses</a></li>
+                    <li><a href="#responsibility">Responsibilities</a></li>
+                    <li><a href="#acheivements">Achievements</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section class="showcase">
-        <div class="container">
-            <h1>Masters of Science in Computer Science</h1>
-            <p>Georgia Institute of Technology</p>
+    <section class="showcase", id="home">
+        <div class="container showcase-content">
+            <div class="profile-pic">
+                <img src="profile.jpeg" alt="Sneha Maheshwari">
+            </div>
+            <div class="about-me">
+                <h2>About Me</h2>
+                <!-- <p>Write a brief introduction about yourself here. Mention your background, interests, and what you are passionate about.</p> -->
+                <!-- More about me content... -->
+
+                <p>Hello! I'm Sneha Maheshwari, a passionate professional in computer science and applied mathematics. My journey began in 11th grade, aiming for the challenging JEE Advance. At the age of 14, I committed myself to rigorous study, eventually securing rank 3141 among 2 million candidates. This led me to an Integrated Masters in Applied Mathematics at IIT Roorkee, where I immersed myself in projects and internships, culminating in a software developer role at Amagi.</p>
+
+                <p>  Currently, I'm pursuing a Master of Science in Computer Science at Georgia Institute of Technology, Atlanta. My work experience includes software development at Amagi and data analysis at American Express, with a strong foundation in languages like C++, Python, and SQL, and tools like Jupyter and AWS.</p> 
+                    
+                <p>  I'm driven by a desire to blend theoretical knowledge with practical applications, particularly in machine learning and data analytics. Outside work, I find joy in reading, sketching, and painting.</p>
+
+        </div>
         </div>
     </section>
 
-    <section id="education">
+    
+     <section id="education" style="background-color: #f9f9f9; padding: 40px 0;">
         <div class="container">
-            <h2>Education</h2>
-            <p>Masters of Science in Computer Science, Georgia Institute of Technology, Atlanta (2023-2024), CGPA: 4.0/4.0</p>
-            <p>Integrated Masters in Applied Mathematics, Indian Institute of Technology, Roorkee (2016-2021), CGPA: 7.55/10</p>
+            <h2 style="text-align: center; margin-bottom: 30px;">Education</h2>
+            <div class="education-container">
+                <!-- Georgia Tech -->
+                <div class="education-item">
+                    <button class="collapsible">
+                        <img src="GT.png" alt="Georgia Tech Logo" style="width: 30px; height: 30px; margin-right: 15px;">
+                        <div>
+                            <div><strong>Masters of Science in Computer Science</strong></div>
+                            <div>Georgia Institute of Technology, Atlanta</div>
+                        </div>
+                        <!-- <span><strong>Masters of Science in Computer Science</strong> </span> -->
+                        <!-- <span><strong>Georgia Institute of Technology, Atlanta</strong></span> -->
+                    </button>
+                    <div class="content">
+                        <ul>
+                            <!-- List courses here -->
+                            <li>Machine Learning</li>
+                            <li>Data and Visual Analytics</li>
+                            <li>Scientific Machine Learning</li>
+                            <li>Logic in Computer Science</li>
+                            <!-- ... more courses ... -->
+                        </ul>
+                    </div>
+                </div>
+                <!-- IIT Roorkee -->
+                <div class="education-item">
+                    <button class="collapsible">
+                        <img src="iit_roorkee.jpeg" alt="IIT Roorkee Logo" style="width: 30px; height: 30px; margin-right: 15px;">
+                         <div>
+                            <div><strong>Integrated Masters in Applied Mathematics</strong></div>
+                            <div>Indian Institute of Technology, Roorkee</div>
+                        </div>
+                    </button>
+                    <div class="content">
+                        <ul>
+                            <!-- List courses here -->
+                            <li>Linear Algebra</li>
+                            <li>Linear Programming</li>
+                            <li>Non-linear Programming</li>
+                            <li>Mathematical Imaging Techniques</li>
+                            <li>Statistical Inference</li>
+                            <li>Data Structures</li>
+                            <li>Design and Analysis of Algorithms</li>
+                            <li>Database Management System</li>
+                            <li>Programming, Data Structures and Algorithms using Python</li>
+                            <li>Parallel Computing</li>
+                            <li>Evolutionary Algorithm</li>
+                            <li>Functional Analysis</li>
+                            <li>Tensors and Differential Geometry</li>
+                            <li>Fluid Dynamics</li>
+                            <li>Rocket Propultion</li>
+                            <li>Complex Analysis</li>
+                            <li>Theory of Partial Differential Equation</li>
+                            <li>Abstract Algebra</li>
+                            <li>Advanced Numerical Analysis</li>
+                            <li>Soft Computing</li>
+                            <li>Topology</li>
+                            <li>Real Analysis</li>
+                            <li>Theory of Ordinary Differential Equation</li>
+                            <li>Advanced Engineering Mathematics</li>
+                            <li>Combinatorial Mathematics</li>
+                            <li>Theory of Computation</li>
+                            <li>Mathematical Modeling and Simulations</li>
+                            <li>Film and Literature</li>
+                            <li>Mathematical Statistics</li>
+                            <li>Number Theory</li>
+                            <li>Graph Theory</li>
+                            <li>Transform Techniques</li>
+                            <li>Economics</li>
+                            <li>Fluid Mechanics</li>
+                            <li>Ordinary and Partial Diffrential Equation</li>
+                            <li>Discrete Mathematics</li>
+                            <li>Solid Mechanics</li>
+                            <li>Electromagnetic Theory</li>
+                            <li>Numerical Methods</li>
+                            <li>Fundamental of Electronics</li>
+                            <li>Mechanics</li>
+                            <li>Intro to Computer Programming</li>
+                            <li>Intro to Mathematical Science</li>
+                            <li>Intro to Environmental Science</li>
+                            <li>Ethics and Self Awareness</li>
+                            <!-- ... more courses ... -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
+    
+    
+    
 
-    <section id="experience">
+    <section id="experience", style="padding: 40px 0;" >
         <div class="container">
             <h2>Professional Experience</h2>
-            <p>Software Developer at Amagi (Details to be added)</p>
+            <div class="timeline">
+                <!-- Timeline item 1 -->
+                <div class="timeline-item">
+                    <!-- <div class="timeline-icon"></div> -->
+                    <img src="amagi-logo.png" alt="Amagi Logo" class="timeline-icon">
+                    <div class="timeline-content">
+                        <h3>Amagi - Software Developer</h3>
+                        <span class="date">Jun 2021 - Aug 2023</span>
+                        <!-- Details about Amagi experience -->
+                        <!-- ... -->
+                        <div class="info" id="info-amagi">
+                            <!-- Details about Amagi experience -->
+                            <ul>
+                                <li>Worked on the Videoken app, focusing on automated detection of shot boundaries, keyframes, and thumbnails for video delivery platforms.</li>
+                                <li>Implemented algorithms based on research papers related to scene breaks and thumbnail selection.</li>
+                                <li>Utilized libraries such as OpenCV, decord, faiss, ffmpeg, and awk.</li>
+                                <li>Developed a classification app using PyTorch and Alexnet Model.</li>
+                                <li>Created an application for auto-generating bills and built visualization dashboards using Tableau and Looker Studio.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- </div> -->
+                <!-- Timeline item 2 -->
+                <!-- ... Other timeline items ... -->
+                <div class="timeline-item">
+                    <img src="amex-logo.jpg" alt="Amex Logo" class="timeline-icon">
+                    <div class="timeline-content">
+                        <h3>American Express - Exploratory Data Analyst</h3>
+                    <span class="date-text">May 2020 - Jul 2020</span>
+                    <div class="info" id="info-amex">
+                        <!-- Details about American Express experience -->
+                        <!-- Content -->
+                        <ul>
+                            <li>Created Intelligent Feature Selection model for selecting top variables from a large dataset.</li>
+                            <li>Applied various techniques for feature selection and model performance improvement.</li>
+                            <li>Improved the gini score and accuracy of existing models significantly.</li>
+                        </ul>
+                    
+                    </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <!-- <div class="timeline-icon"></div> -->
+                    <img src="iiit.png" alt="IIIT Logo" class="timeline-icon">
+                    <div class="timeline-content">
+                        <h3>IIIT Hyderabad - Machine Learning Lab Research Assistant</h3>
+                    <span class="date-text">May 2018 - Dec 2018</span>
+                    <div class="info" id="info-iiit">
+                        <!-- Details about IIIT Hyderabad experience -->
+                        <!-- Content -->
+                        <ul>
+                            <li>Implemented Reinforcement Learning algorithms and worked on portfolio selection problems.</li>
+                            <li>Developed an algorithm for Risk-Aware Multi-Armed Bandit Problem.</li>
+                            <li>Authored a report on Advanced Concentration Inequalities.</li>
+                        </ul>
+                        <div class="project-links">
+                        <a href="https://github.com/snehamaheshwari07/Risk-aware-Multi-Armed-Bandit" target="_blank">
+                            <button style="font-size:24px">GitHub <i class="fa fa-github"></i></button>
+                        </a>
+                        <a href="https://drive.google.com/file/d/1Deievw8S8bMnFtAVsBT3kZVBJbahFKuz/view?usp=sharing" target="_blank">
+                            <button style="font-size:24px"> Risk Aware Portfolio Selection Report <i class="fa fa-file-alt"></i></button>
+                        </a>
+                        <a href="https://arxiv.org/pdf/1910.02884.pdf" target="_blank">
+                            <button style="font-size:24px"> Advanced Concentration Inequalities Report <i class="fa fa-file-alt"></i></button>
+                        </a>
+                    </div>
+                    </div> 
+                    </div> 
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="projects">
+    <section id="projects", style="background-color: #f9f9f9; padding: 40px 0;">
         <div class="container">
-            <h2>Skills and Projects</h2>
-            <p>Details to be added</p>
+            <h2>Projects</h2>
+            <div class="project-card">
+                <h3>New York Safer Airbnb Helper </h3>
+                <span class="project-date">Aug 2023 - Dec 2023</span>
+                <!-- <p>Aug 2023 - Dec 2023</p> -->
+                <ul>
+                    <li>This project eases the choice of selecting an Airbnb by providing users with adequate data on crime rates, traffic, and nearby restaurants for New York City Airbnbs.</li>
+                </ul>
+                <div class="project-links">
+                    <a href="https://github.com/snehamaheshwari07/dva-project" target="_blank">
+                        <button style="font-size:24px">GitHub <i class="fa fa-github"></i></button>
+                    </a>
+                    <a href="https://drive.google.com/file/d/1ANPfR5XP6e298QNlsHK76fizGX9pTxNf/view?usp=sharing" target="_blank">
+                        <button style="font-size:24px">Report <i class="fa fa-file-alt"></i></button>
+                    </a>
+                    <a href="https://scleox.github.io/dva-project/" target="_blank">
+                        <button style="font-size:24px">Website <i class="fa fa-globe"></i></button>
+                    </a>              
+                </div>
+                <!-- Embed YouTube Video -->
+                <div class="video-container"; style="margin-top: 10px;">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/nHBcI0p5nG8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+            <!-- Repeat for other projects -->
+            
+            <div class="project-card">
+                <h3>Enhancing Question-Answering Systems with BERT</h3>
+                <span class="project-date">Aug 2023 - Dec 2023</span>
+                <ul>
+                    <li>Enhanced BERT model on QA frameworks to improve their performance.</li>
+               </ul>
+                <div class="project-links">
+                    <!-- <a href="https://github.com/snehamaheshwari07/dva-project" target="_blank">
+                        <button style="font-size:24px">GitHub <i class="fa fa-github"></i></button>
+                    </a> -->
+                   <a href="https://drive.google.com/file/d/1sUYFeVTa4lQ-xr_x27EVWyqwWndaTRGf/view?usp=sharing" target="_blank">
+                        <button style="font-size:24px">Report <i class="fa fa-file-alt"></i></button>
+                    </a>              
+                </div>
+                <!-- Embed YouTube Video -->
+                <div class="video-container" style="margin-top: 10px;">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/XGWAIPVIgXs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+            <!-- </div> -->
+            <!-- Additional project cards go here -->
+            <div class="project-card">
+                <!-- <div class="project-header"> -->
+                    <h3>SAT Solver for Einstein's Puzzle and Creating Optimum Heuristic</h3>
+                    <span class="project-date">Aug 2023 - Dec 2023</span>
+                <!-- </div> -->
+                <ul>
+                    <li>Created CNF form of Einstein's puzzle and identified its solvability using DPLL algorithm.</li>
+                </ul>
+                <div class="project-links">
+                    <a href="https://github.com/snehamaheshwari07/Logic_in_Computer_Science" target="_blank">
+                        <button style="font-size:24px">GitHub <i class="fa fa-github"></i></button>
+                    </a>
+                    <a href="https://drive.google.com/file/d/1MYouaCQsy7TJo2tpT-BdZWZf9AwOqBJe/view?usp=sharing" target="_blank">
+                        <button style="font-size:24px">Report <i class="fa fa-file-alt"></i></button>
+                    </a>
+                </div>
+            </div>
+    
+            <!-- New project card for Repeated Reachability for 2 Player Games -->
+            <div class="project-card">
+                <!-- <div class="project-header"> -->
+                    <h3>Repeated Reachability for 2 Player Games</h3>
+                    <span class="project-date">Aug 2023 - Dec 2023</span>
+                <!-- </div> -->
+                <ul>
+                    <li>Implemented Buchi algorithm and Finite Reachability algorithm for 2 player games.</li>
+                </ul>
+                <div class="project-links">
+                    <a href="https://github.com/snehamaheshwari07/Logic-in-CS---Project-2" target="_blank">
+                        <button style="font-size:24px">GitHub <i class="fa fa-github"></i></button>
+                    </a>
+                </div>
+            </div>
+
         </div>
     </section>
+
+    <!-- ... existing HTML code ... -->
+
+<section id="publications"style=" padding: 60px 0;">
+    <div class="container">
+        <h2>Publications</h2>
+        <ul>
+            <li>Kumar Abhishek, Sneha Maheshwari, Sujit Gujar, "Introduction to Concentration Inequalities", in arXiv, citation with arXiv extension, 2019</li>
+        </ul>
+    </div>
+</section>
+
+<section id="technical-skills", style="background-color: #f9f9f9; padding: 10px 0;">
+    <div class="container">
+        <h2>Technical Skills</h2>
+        <ul>
+            <li><strong>Programming Languages:</strong> C++, Python, SQL, Latex, HTML, CSS<br></li>
+            <li><strong>Tools and Frameworks:</strong> Jupyter, AWS, Tableau, Looker Studio, VS Code, pgadmin, Overleaf, Git, Azur<br></li>
+        </ul>
+        
+        
+    </div>
+</section>
+
+<section id="key-courses">
+    <div class="container">
+        <h2>Courses Taken</h2>
+
+        <div class="course-card">
+            <button class="collapsible">Computer Science</button>
+            <div class="content">
+                <ul>
+                    <!-- Computer Science courses here -->
+                    <li>Machine Learning</li>
+                    <li>Data and Visual Analytics</li>
+                    <li>Scientific Machine Learning</li>
+                    <li>Logic in Computer Science</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="course-card">
+            <button class="collapsible">Applied Mathematics</button>
+            <div class="content">
+                <ul>
+                    <!-- Applied Mathematics courses here -->
+                    <li>Linear Algebra</li>
+                    <li>Linear Programming</li>
+                    <li>Non-linear Programming</li>
+                    <li>Mathematical Imaging Techniques</li>
+                    <li>Statistical Inference</li>
+                    <li>Data Structures</li>
+                    <li>Design and Analysis of Algorithms</li>
+                    <li>Database Management System</li>
+                    <li>Programming, Data Structures and Algorithms using Python</li>
+                    <li>Parallel Computing</li>
+                    <li>Evolutionary Algorithm</li>
+                    <li>Functional Analysis</li>
+                    <li>Tensors and Differential Geometry</li>
+                    <li>Fluid Dynamics</li>
+                    <li>Rocket Propultion</li>
+                    <li>Complex Analysis</li>
+                    <li>Theory of Partial Differential Equation</li>
+                    <li>Abstract Algebra</li>
+                    <li>Advanced Numerical Analysis</li>
+                    <li>Soft Computing</li>
+                    <li>Topology</li>
+                    <li>Real Analysis</li>
+                    <li>Theory of Ordinary Differential Equation</li>
+                    <li>Advanced Engineering Mathematics</li>
+                    <li>Combinatorial Mathematics</li>
+                    <li>Theory of Computation</li>
+                    <li>Mathematical Modeling and Simulations</li>
+                    <li>Film and Literature</li>
+                    <li>Mathematical Statistics</li>
+                    <li>Number Theory</li>
+                    <li>Graph Theory</li>
+                    <li>Transform Techniques</li>
+                    <li>Economics</li>
+                    <li>Fluid Mechanics</li>
+                    <li>Ordinary and Partial Diffrential Equation</li>
+                    <li>Discrete Mathematics</li>
+                    <li>Solid Mechanics</li>
+                    <li>Electromagnetic Theory</li>
+                    <li>Numerical Methods</li>
+                    <li>Fundamental of Electronics</li>
+                    <li>Mechanics</li>
+                    <li>Intro to Computer Programming</li>
+                    <li>Intro to Mathematical Science</li>
+                    <li>Intro to Environmental Science</li>
+                    <li>Ethics and Self Awareness</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="responsibility">
+    <div class="container">
+        <h2>Positions of Responsibility</h2>
+        <ul>
+            <li><strong>Student Mentor:</strong> SMP, IIT Roorkee (2019-2021)</li>
+            <li><strong>Senior Project Manager:</strong> Enactus, IIT Roorkee (2018-2019)</li>
+            <li><strong>Under Graduate Teaching Assistant:</strong> Introduction to Computer Programming (2018)</li>
+            <li><strong>Cadet:</strong> National Cadet Corps (NCC) (2016-2017)</li>
+            <li><strong>Volunteer:</strong> SPIC MACAY, IIT Roorkee (2016-2021)</li>
+        </ul>
+    </div>
+</section>
+<section id="achievements">
+    <div class="container">
+        <h2>Achievements</h2>
+        <ul>
+            <li><strong>IIT JEE:</strong> Jee Advance All India Rank - 3141 out of 2 million candidates (2016)</li>
+            <li><strong>Inspire Scholarship:</strong> Award to the young talent and motivated researchers by Government of India (2016-2021)</li>
+            <li><strong>Letter of Appreciation by Director, IIT Roorkee:</strong> Highest improvement in SGPA in Int. M.Sc. program (2019)</li>
+            <li><strong>Merit holder of International Mathematics Competition (LIMIT):</strong> (2019)</li>
+            <li><strong>Winner Hult Prize Regional:</strong> Presented Project SCRAP for recycling plastic (2019)</li>
+            <li><strong>Women Emerging in Finance - Goldman Sachs:</strong> Selected based on Risk-aware portfolio selection algorithm (2020)</li>
+        </ul>
+    </div>
+</section>
+
+<!-- ... rest of your existing HTML code ... -->
+
+    
+    
 
     <section id="contact">
         <div class="container">
@@ -129,3 +873,65 @@
     </section>
 </body>
 </html>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var sections = document.querySelectorAll("section");
+            var observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            var observer = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("in-view");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+ 
+//         document.addEventListener("DOMContentLoaded", function() {
+//     var coll = document.getElementsByClassName("collapsible");
+//     var i;
+
+//     for (i = 0; i < coll.length; i++) {
+//         coll[i].addEventListener("click", function() {
+//             this.classList.toggle("active");
+//             var content = this.nextElementSibling;
+//             if (content.style.display === "block") {
+//                 content.style.display = "none";
+//             } else {
+//                 content.style.display = "block";
+//             }
+//         });
+//     }
+// });
+
+document.addEventListener("DOMContentLoaded", function() {
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        });
+    }
+});
+
+
+
+    </script>
+
