@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,10 +7,10 @@
     <style>
         header {
             position: fixed;
-            top: 0;
+            /* top: 0; */
             width: 100%;
             z-index: 1000;
-            /* height: 3px; */
+            height: 35px;
         }
         body {
             font-family: Arial, sans-serif;
@@ -21,21 +20,18 @@
             color: #333;
         }
         .container {
-            width: 100%;
+            width: 95%;
             margin: auto;
             overflow: hidden;
-            /* display: flex;
-    flex-direction: column;
-    align-items: center; */
         }
-        /* header {
+        header {
             background: #ffffff;
             color: #6d6b6b;
             padding-top: 3px;
             min-height: 3px;
             border-bottom: #ffffff 3px solid;
 
-        } */
+        }
         h2 {
             color: #6d6b6b; /* Change the color of h2 headings */
             text-align: center; 
@@ -59,19 +55,19 @@
             margin: 0 15px 0 15px;
             vertical-align: middle;
         }
-        /* header #branding {
+        header #branding {
             float: left;
             vertical-align: middle;
         }
         header #branding h1 {
             margin: 0;
             vertical-align: middle;
-        } */
-        /* header nav {
+        }
+        header nav {
             float: right;
             margin-top: -0.5em;
             vertical-align: middle;
-        } */
+        }
         header a:hover {
             color: #6d6b6b;
             font-weight: bold;
@@ -83,43 +79,35 @@
             background: none;
             text-align: left;
             padding: 20px 0;
-            /* margin-top: 0px; */
+            margin-top: 50px;
             /* color: #ffffff; */
         }
         .showcase-content {
             display: flex;
             align-items: center;
-            /* justify-content: center; */
-            /* padding: 20px; */
-            /* flex-direction: column; */
-            /* text-align: center; */
-            width: 100%;
-            /* justify-content: space-between; */
+            justify-content: space-around;
+            padding: 20px;
         }
 
         .profile-pic {
-            /* flex-basis: 20%; */
-            /* text-align: center; */
-            /* margin-bottom: 20px; */
-            flex: 1;
-    max-width: 200px; /* adjust as necessary */
-    margin-right: 20px;
+            flex-basis: 10%;
+            text-align: center;
         }
 
         .profile-pic img {
-            width: 100%;
-    border-radius: 5%;
+            max-width: 200px; /* Adjust as per your preference */
+            border-radius: 5%;
         }
 
         .about-me {
-            flex: 4; /* give more space to the about me section */
-    max-width: 750px; /* adjust as necessary */
+            flex-basis: 65%;
+            /* font-size: 1px; */
         }
         .about-me p {
     font-size: 1px; /* Adjust this value as needed */
 }
         .showcase h1 {
-            /* margin-top: 80px; */
+            margin-top: 80px;
             font-size: 58px;
             margin-bottom: 10px;
         }
@@ -294,19 +282,17 @@
     padding: 0 18px;
     display: none;
     overflow: hidden;
-    /* background-color: #f1f1f1; */
+    background-color: #f1f1f1;
 }
 #achievements ul {
-    list-style-type: none; 
-     /* Removes the default list styling */
+    list-style-type: none; /* Removes the default list styling */
     padding: 0;
 }
 
 #achievements li {
-    margin-bottom: 10px; 
-    /* Adds spacing between each item */
-    /* font-size: 1em; Adjust font size as needed */
-} 
+    margin-bottom: 10px; /* Adds spacing between each item */
+    font-size: 1em; /* Adjust font size as needed */
+}
 #responsibility ul {
     list-style-type: none; /* Removes the default list styling */
     padding: 0;
@@ -435,60 +421,6 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-/* Add this new style for the vertical header */
-#vertical-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 20%;
-    height: 100%;
-    background: #333; /* Dark background for the vertical header */
-    color: white;
-    z-index: 1001; /* Make sure it's above other content */
-    padding: 20px;
-}
-
-#vertical-header a {
-    color: white;
-    padding: 10px;
-    display: block; /* Make the links block to take the full width */
-    text-decoration: none;
-}
-
-#vertical-header a.active {
-    background: #666; /* Lighter background for active link */
-}
-
-/* Adjust body padding to not overlap with the vertical header */
-body {
-    padding-left: 25%; /* same width as the vertical header */
- /* same width as the vertical header */
-    /* padding-top: 0; */
-    padding-right:2%
-
-
-}
-.contact-info {
-    text-align: center;
-    padding: 20px;
-}
-
-/* Responsive design adjustments */
-@media screen and (max-width: 768px) {
-    .showcase-content {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .profile-pic {
-        margin-right: 0;
-        margin-bottom: 20px;
-    }
-
-    .about-me {
-        text-align: center;
-    }
-}
 
 
 
@@ -502,62 +434,50 @@ body {
 </head>
 <body>
     <header>
-        <div id="vertical-header">
-            <!-- <a href="#home">Home</a> -->
-            <!-- ... other links ... -->
-            <!-- <a href="#contact">Contact</a> -->
-       
-            <ul>
-                <li ><a href="#home">Home</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#publications">Publications</a></li>
-                <li><a href="#technical-skills">Technical Skills</a></li>
-                <li><a href="#key-courses">Courses</a></li>
-                <li><a href="#responsibility">Responsibilities</a></li>
-                <li><a href="#achievements">Achievements</a></li>
-                <!-- <li><a href="#contact">Contact</a></li> -->
-            </ul>
-          
+        <div class="container">
+            <div id="branding">
+                <!-- <img src="profile_pic.jpg" alt="Sneha Maheshwari" style="width: 50px; height: 50px; border-radius: 50%; float: left; margin-right: 10px;"> -->
+                <h1 style="font-size: 35px; margin-top: 0px; ">Sneha Maheshwari</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li ><a href="#home">Home</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#publications">Publications</a></li>
+                    <li><a href="#technical-skills">Technical Skills</a></li>
+                    <li><a href="#key-courses">Courses</a></li>
+                    <li><a href="#responsibility">Responsibilities</a></li>
+                    <li><a href="#acheivements">Achievements</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-        
     </header>
 
-    
-
-    <section class="showcase" id="home">
-        <div class="container">
-            <h1 style="text-align: center;">Sneha Maheshwari</h1>
-            <h2>About Me</h2>
-            <div class="showcase-content">
-                <div class="profile-pic">
-                    <img src="profile_pic1.jpeg" alt="Sneha Maheshwari">
-                </div>
-                <div class="about-me">
-                    <!-- <h2>About Me</h2> -->
-                    <p>Hello! I'm Sneha Maheshwari, welcome to my website. I'm a passionate professional in computer science and applied mathematics. My journey began in 11th grade, aiming for the challenging JEE Advance. At the age of 14, I committed myself to rigorous study, eventually securing rank 3141 among 2 million candidates. This led me to an Integrated Masters in Applied Mathematics at IIT Roorkee, where I immersed myself in projects and internships, culminating in a software developer role at Amagi.</p>
-
-                    <p>  Currently, I'm pursuing a Master of Science in Computer Science at Georgia Institute of Technology, Atlanta. My work experience includes software development at Amagi and data analysis at American Express, with a strong foundation in languages like C++, Python, and SQL, and tools like Jupyter and AWS.</p> 
-                        
-                    <p>  I'm driven by a desire to blend theoretical knowledge with practical applications, particularly in machine learning and data analytics. Outside work, I find joy in reading, sketching, and painting.</p>
-                  </div>
+    <section class="showcase", id="home">
+        <div class="container showcase-content">
+            <div class="profile-pic">
+                <img src="profile.jpeg" alt="Sneha Maheshwari">
             </div>
-            <div class="contact-info">
-                <h2>Contact</h2>
-                <p>Email: smaheshwari63@gatech.edu</p>
-                <p>LinkedIn: <a href="https://www.linkedin.com/in/sneha-maheshwari-273349133">sneha-maheshwari-273349133</a></p>
-                <p>GitHub: <a href="https://github.com/snehamaheshwari07">snehamaheshwari07</a></p>
-            </div>
+            <div class="about-me">
+                <h2>About Me</h2>
+                <!-- <p>Write a brief introduction about yourself here. Mention your background, interests, and what you are passionate about.</p> -->
+                <!-- More about me content... -->
+
+                <p>Hello! I'm Sneha Maheshwari, a passionate professional in computer science and applied mathematics. My journey began in 11th grade, aiming for the challenging JEE Advance. At the age of 14, I committed myself to rigorous study, eventually securing rank 3141 among 2 million candidates. This led me to an Integrated Masters in Applied Mathematics at IIT Roorkee, where I immersed myself in projects and internships, culminating in a software developer role at Amagi.</p>
+
+                <p>  Currently, I'm pursuing a Master of Science in Computer Science at Georgia Institute of Technology, Atlanta. My work experience includes software development at Amagi and data analysis at American Express, with a strong foundation in languages like C++, Python, and SQL, and tools like Jupyter and AWS.</p> 
+                    
+                <p>  I'm driven by a desire to blend theoretical knowledge with practical applications, particularly in machine learning and data analytics. Outside work, I find joy in reading, sketching, and painting.</p>
+
+        </div>
         </div>
     </section>
-    
-    
 
     
-
-    
-     <section id="education">
+     <section id="education" style="background-color: #f9f9f9; padding: 40px 0;">
         <div class="container">
             <h2 style="text-align: center; margin-bottom: 30px;">Education</h2>
             <div class="education-container">
@@ -651,7 +571,7 @@ body {
     
     
 
-    <section id="experience" >
+    <section id="experience", style="padding: 40px 0;" >
         <div class="container">
             <h2>Professional Experience</h2>
             <div class="timeline">
@@ -728,7 +648,7 @@ body {
         </div>
     </section>
 
-    <section id="projects">
+    <section id="projects", style="background-color: #f9f9f9; padding: 40px 0;">
         <div class="container">
             <h2>Projects</h2>
             <div class="project-card">
@@ -825,7 +745,7 @@ body {
     </div>
 </section>
 
-<section id="technical-skills">
+<section id="technical-skills", style="background-color: #f9f9f9; padding: 10px 0;">
     <div class="container">
         <h2>Technical Skills</h2>
         <ul>
@@ -942,14 +862,14 @@ body {
     
     
 
-    <!-- <section id="contact">
+    <section id="contact">
         <div class="container">
             <h2>Contact</h2>
             <p>Email: smaheshwari63@gatech.edu</p>
             <p>LinkedIn: <a href="https://www.linkedin.com/in/sneha-maheshwari-273349133">sneha-maheshwari-273349133</a></p>
             <p>GitHub: <a href="https://github.com/snehamaheshwari07">snehamaheshwari07</a></p>
         </div>
-    </section> -->
+    </section>
 </body>
 </html>
 
@@ -1008,55 +928,6 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     }
-});
-
-// JavaScript to add 'active' class to the current section link in the vertical header
-document.addEventListener("DOMContentLoaded", function() {
-    var navLinks = document.querySelectorAll('#vertical-header a');
-    var sections = document.querySelectorAll('section');
-    
-    function changeLinkState() {
-        let index = sections.length;
-
-        while(--index && window.scrollY + 50 < sections[index].offsetTop) {}
-
-        navLinks.forEach((link) => link.classList.remove('active'));
-        navLinks[index].classList.add('active');
-    }
-
-    changeLinkState();
-    // window.addEventListener('scroll', changeLinkState);
-});
-
-document.addEventListener("DOMContentLoaded", function() {
-    // Initial setup to show only the 'home' section
-    var sections = document.querySelectorAll('section');
-    sections.forEach(section => {
-        section.style.display = 'none'; // hide all sections
-    });
-    document.querySelector('#home').style.display = 'block'; // show home section
-
-    // Function to hide all sections and show the one with the given ID
-    function showSection(sectionId) {
-        sections.forEach(section => {
-            section.style.display = 'none'; // hide
-        });
-        document.querySelector(sectionId).style.display = 'block'; // show
-    }
-
-    // Add click event listener to vertical header links
-    var navLinks = document.querySelectorAll('#vertical-header a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(event) {
-            event.preventDefault(); // prevent default anchor behavior
-            var sectionId = this.getAttribute('href');
-            showSection(sectionId);
-
-            // Update active link
-            navLinks.forEach((link) => link.classList.remove('active'));
-            this.classList.add('active');
-        });
-    });
 });
 
 
